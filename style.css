@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+header {
+  display: flex;
+  height: 100px;
+  background-color: #c9ecdc;
+  border-bottom: 1px solid #ececec;
+}
+.btn-cart {
+  width: 100px;
+  height: 38px;
+  margin-top: 20px;
+  margin-left: 1126px;
+  border: none;
+  background: white;
+  color: #a4a4a4;
+  border-radius: 5px;
+}
+.btn-cart:hover,.by-btn:hover {
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
+}
+.products {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: #bae1ec;
+  border-bottom: 1px solid #ececec;
+} 
+.product-item {
+  width: 180px;
+  height: 150px;
+  border: 1px solid white;
+}
+h3,p {
+  text-align: center;
+}
+.by-btn {
+  display: flex;
+  margin: 0 auto;
+  border: none;
+  background: white;
+  color: #a4a4a4;
+  border-radius: 5px;
+}
