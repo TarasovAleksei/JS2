@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+.menu-list {
+    display: flex;
+}
+
+.menu-list li {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    list-style: none;
+    padding-right: 10px;
+}
+
+.menu-list li a {
+    color: black;
+    text-decoration: none;
+}
+
+.menu-list li a.active {
+    color: lightgreen;
+}
+
+.menu-list li a:hover {
+    color: green;
+}
+
+.btn-cart {
+    width: 40px;
+    height: 20px;
+    border-radius: 15%;
+    border: none;
+    background-color: transparent;
+}
+
+.btn-cart:hover {
+    color: green;
+}
+
+.products {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.product-item {
+    margin-left: 50px;
+}
+
+.item-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    letter-spacing: 1.1px;
+    margin-top: 5px;
+}
+
+.item-price {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.buy-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    margin-top: 5px;
+    border-radius: 5%;
+    border: 1px solid black;
+    letter-spacing: 0.5px;
+}
+
+.total-price {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.cart {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.cart .overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.3)
+}
+
+.cart .inner {
+    width: 400px;
+    min-height: 400px;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+
+.cart.active {
+    display: block;
+}
+
+.plus-btn,
+.min-btn {
+    width: 20px;
+    height: 20px;
+}
+
+.del-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+} 
