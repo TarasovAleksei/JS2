@@ -133,31 +133,38 @@ class CartItem {
     };
 }
 
-let cart = new Cart();
-let list = new ProductList();
+const cart = new Cart();
+const list = new ProductList();
 const toggleCart = (event) => {
     event.preventDefault();
-    document.querySelector(".cart").classList.toggle("active");    
+    document.querySelector(".cart").classList.toggle("active");  
 };
-document.querySelector(".btn-cart").addEventListener("click", toggleCart)
-document.querySelector(".cart .overlay").addEventListener("click", toggleCart)
-document.querySelector(".products").addEventListener("click", (event) => {
-    if (event.target.classList.contains("buy-btn")) {
-        const id = event.target.getAttribute("data-id");
-        const productItem = list.getById(id);
-        cart.add(productItem);
+renderCart();
+function renderCart() {
+    document.querySelector(".btn-cart").addEventListener("click", toggleCart);
+    document.querySelector(".cart .overlay").addEventListener("click", toggleCart);
+    document.querySelector(".products").addEventListener("click", (event) => {
+        if (event.target.classList.contains("buy-btn")) {
+            const id = event.target.getAttribute("data-id");
+            const productItem = list.getById(id);
+            cart.add(productItem);
+        }
+    });
+    plusAndMinus();
+    function plusAndMinus() {
+        document.querySelector(".cart").addEventListener("click", (event) => {
+             if (event.target.classList.contains("plus-btn")) {
+                    const id = event.target.getAttribute("data-id");
+                    const productItem = list.getById(id);
+                    cart.add(productItem);
+            } else if (event.target.classList.contains("min-btn")) {
+                    const id = event.target.getAttribute("data-id");
+                    cart.minus(id);
+            } else if (event.target.classList.contains("del-btn")) {
+                    const id = event.target.getAttribute("data-id");
+                    cart.remove(id);
+            }
+        });
+        
     }
-})
-document.querySelector(".cart").addEventListener("click", (event) => {
-    if (event.target.classList.contains("plus-btn")) {
-        const id = event.target.getAttribute("data-id");
-        const productItem = list.getById(id);
-        cart.add(productItem);
-    } else if (event.target.classList.contains("min-btn")){
-        const id = event.target.getAttribute("data-id");
-        cart.minus(id);
-    } else if (event.target.classList.contains("del-btn")){
-        const id = event.target.getAttribute("data-id");
-        cart.remove(id);
-    }
-})
+}
