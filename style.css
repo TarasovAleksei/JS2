@@ -1,38 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 .menu {
     display: flex;
     justify-content: center;
 }
-
 .menu-list {
     display: flex;
 }
-
 .menu-list li {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     list-style: none;
     padding-right: 10px;
 }
-
 .menu-list li a {
     color: black;
     text-decoration: none;
 }
-
 .menu-list li a.active {
     color: lightgreen;
 }
-
 .menu-list li a:hover {
     color: green;
+}
+
+.search-form {
+    position: relative;
 }
 
 .btn-cart {
@@ -43,33 +40,45 @@
     background-color: transparent;
 }
 
+.search-btn {
+    position: absolute;
+    left: 90px;
+    top: 3px;
+    border: none;
+    background-color: transparent;
+}
+
+.search {
+    width: 100px;
+    margin-left: 5px;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
 .btn-cart:hover {
     color: green;
 }
-
 .products {
     margin-top: 20px;
     display: flex;
     justify-content: center;
 }
-
 .product-item {
     margin-left: 50px;
 }
 
+.noCharge,
 .item-name {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     letter-spacing: 1.1px;
     margin-top: 5px;
 }
-
 .item-price {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     margin-top: 5px;
 }
-
 .buy-btn {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
@@ -78,7 +87,6 @@
     border: 1px solid black;
     letter-spacing: 0.5px;
 }
-
 .total-price {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -86,4 +94,4 @@
     display: flex;
     justify-content: center;
     text-transform: uppercase;
-} 
+}
