@@ -2,24 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Интернет-магазин</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://use.fontawesome.com/0e8aea7361.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <header class="menu padding-site">
+    <div id="app">
+    <header class="menu">
         <ul class="menu-list">
             <li class="menu-list-item active"><a class="active" href="#">Главная</a></li>
             <li class="menu-list-item"><a href="#">Каталог</a></li>
             <li class="menu-list-item"><a href="#">Контакты</a></li>
         </ul>
-        <button class="btn-cart" type="button"><i class="fa fa-shopping-basket"></i></button>
+        <filter-items
+        @filter="filter">
+        </filter-items>
+        <button class="btn-cart" type="button" @click = "toggle"><i class="fas fa-shopping-basket"></i></button>
     </header>
     <main class="padding-site">
-        <div class="products"></div>
-        <div class="total"></div>
+    <product-items
+        :filtred-goods="filtredGoods" 
+        :img-goods="imgGoods"
+        @addproduct="addproduct">
+    </product-items>   
     </main>
+    <cart-items  
+        v-show = "showCart"
+        :cart-goods = "cartGoods"
+        :img-goods="imgGoods"
+        :total-price = "totalPrice"
+        @addproduct="addproduct"
+        @minusproduct = "minusproduct"
+        @remove = "remove"
+        @toggle = "toggle">
+    </cart-items>
     <img src="" alt="">
-    <script src="main.js"></script>
+    </div>
+    <script src="js/FilterItems.js"></script>
+    <script src="js/ProductItems.js"></script>
+    <script src="js/CartItems.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html> 
